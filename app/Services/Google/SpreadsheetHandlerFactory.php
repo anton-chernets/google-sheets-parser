@@ -9,12 +9,8 @@ class SpreadsheetHandlerFactory
     /**
      * @throws Exception
      */
-    public static function make(string $scheme): SpreadsheetHandlerStrategy
+    public static function make(): SpreadsheetHandlerStrategy
     {
-        return match ($scheme) {
-            'config_files' => new ConfigSpreadsheetHandler(),
-            'account_files' => new DriveSpreadsheetHandler(),
-            default => throw new Exception('Invalid scheme.'),
-        };
+        return new ConfigSpreadsheetHandler();
     }
 }

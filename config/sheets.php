@@ -1,9 +1,8 @@
 <?php
 
 return [
-    'scheme' => 'account_files',//config_files
     'files' => [
-        'file_url' => 'https://docs.google.com/spreadsheets/d/?id?/edit',
+        'file_url' => 'https://docs.google.com/spreadsheets/d/1r8QbWFkP5qvZWaVETpH7hkuR1yWGzpQ8E6Y6boWXP_w/edit',
         'tables' => [
             'sales' => ['date', 'product_name', 'price', 'amount'],
         ],

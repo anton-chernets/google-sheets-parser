@@ -12,13 +12,6 @@ class GoogleSheetsFileImportJob implements ShouldQueue
 {
     use Queueable;
 
-    protected string $scheme;
-
-    public function __construct()
-    {
-        $this->scheme = config('sheets.scheme');
-    }
-
     /**
      * @throws Exception
      * @throws \Google\Exception
@@ -26,9 +19,7 @@ class GoogleSheetsFileImportJob implements ShouldQueue
      */
     public function handle(): void
     {
-        $strategy = SpreadsheetHandlerFactory::make($this->scheme);
-
-        foreach ($strategy->getSpreadsheetIds() as $spreadsheetId) {
+        foreach (SpreadsheetHandlerFactory::make()->getSpreadsheetIds() as $spreadsheetId) {
             $this->processSpreadsheet($spreadsheetId);
         }
     }
