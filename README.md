@@ -1,44 +1,44 @@
-Project Used PHP Google client:
+## Project Used PHP Google Client:
 [google-api-php-client](https://github.com/googleapis/google-api-php-client/)
 
-Spreadsheet google docs:
-[google sheets](https://developers.google.com/sheets/api/reference/rest?apix=true&hl=en)
+## Google Docs Spreadsheet:
+[Google Sheets](https://developers.google.com/sheets/api/reference/rest?apix=true&hl=en)
 
-# Інструкція зі створення Сервісного Акаунта та JSON-файла для Google Sheets API
+# Instructions for Creating a Service Account and JSON File for Google Sheets API
 
-Ця інструкція допоможе створити сервісний акаунт, налаштувати доступ до Google Sheets API та завантажити ключ у форматі JSON.
+This guide will help you create a service account, configure access to the Google Sheets API, and download the key in JSON format.
 
-## Кроки
+## Steps
 
-### 1. Увійдіть у Google Cloud Console
-- Перейдіть до [Google Cloud Console](https://console.cloud.google.com/).
+### 1. Access Google Cloud Console
+- Go to [Google Cloud Console](https://console.cloud.google.com/).
 
-### 2. Виберіть проєкт
-- Виберіть ваш існуючий проєкт або створіть новий.
+### 2. Select a Project
+- Select your existing project or create a new one.
 
-### 3. Перейдіть до "Credentials"
-- У лівій бічній панелі оберіть **"APIs & Services" > "[Credentials](https://console.cloud.google.com/apis/credentials?hl=en)"**.
+### 3. Go to "Credentials"
+- In the left sidebar, navigate to **"APIs & Services" > "[Credentials](https://console.cloud.google.com/apis/credentials?hl=en)"**.
 
-### 4. Створіть сервісний акаунт
-1. Натисніть кнопку **"Create Credentials"**.
-2. Виберіть **"Service account"**.
-3. Введіть назву сервісного акаунта (наприклад, `google-sheets-service-account`).
-4. Натисніть **"Create and Continue"**.
+### 4. Create a Service Account
+1. Click the **"Create Credentials"** button.
+2. Select **"Service account"**.
+3. Enter a name for the service account (e.g., `google-sheets-service-account`).
+4. Click **"Create and Continue"**.
 
-### 5. Призначте ролі
-- Призначте сервісному акаунту роль:
-- **"Viewer"** (перегляд)
-- Натисніть **"Continue"**.
+### 5. Assign Roles
+- Assign a role to the service account:
+   - **"Viewer"** (read-only access).
+- Click **"Continue"**.
 
-### 6. Створіть ключ
-1. Після створення сервісного акаунта перейдіть до списку сервісних акаунтів:
-    - Знайдіть свій акаунт у списку.
-    - Натисніть на назву сервісного акаунта.
-2. Перейдіть до вкладки **"Keys"**.
-3. Натисніть **"Add Key"** > **"Create new key"**.
-4. Виберіть формат **JSON**.
-5. Натисніть **"Create"**.
+### 6. Create a Key
+1. After creating the service account, go to the list of service accounts:
+   - Find your account in the list.
+   - Click on the name of the service account.
+2. Go to the **"Keys"** tab.
+3. Click **"Add Key"** > **"Create new key"**.
+4. Select the **JSON** format.
+5. Click **"Create"**.
 
-### 7. Завантажте JSON-файл
-- Ключ автоматично завантажиться на ваш комп’ютер.
-- Збережіть файл у проєкті, у директорію: app/storage/app/credentials
+### 7. Download the JSON File
+- The key will automatically download to your computer.
+- Save the file in your project directory at: `app/storage/app/credentials`.
