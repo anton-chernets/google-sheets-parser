@@ -42,3 +42,37 @@ This guide will help you create a service account, configure access to the Googl
 ### 7. Download the JSON File
 - The key will automatically download to your computer.
 - Save the file in your project directory at: `app/storage/app/credentials`.
+
+### 8. Grant Access to the Service Account
+- Open your Google Sheet.
+- Click Share in the top right corner.
+- Add the email address from the service account JSON file (look for the client_email key in the JSON file).
+- Give the service account at least Viewer or Editor permissions depending on your needs.
+
+
+# Enabling Google Drive API
+
+Follow these steps to enable the **Google Drive API** for your project:
+
+## Steps
+
+### 1. Open Google Cloud Console
+- Go to [Google Cloud Console](https://console.cloud.google.com/).
+
+### 2. Select Your Project
+- In the top menu, select your project.
+
+### 3. Navigate to APIs & Services
+- In the left-hand sidebar, click **"APIs & Services"** > **"Library"**.
+
+### 4. Find Google Drive API
+- In the search bar, type **"Google Drive API"**.
+
+### 5. Enable the API
+- Click on **"Google Drive API"** in the search results.
+- Click the **"Enable"** button.
+
+### 6. Wait for the API to Activate
+- After enabling the API, wait a few minutes for the changes to propagate.
+
+---
