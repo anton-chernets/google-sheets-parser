@@ -1,10 +1,43 @@
-## Linux Ubuntu 20.04 deploy
+## Linux Ubuntu 24.04 deploy
 ### git repo
-
 ```Shell
+cd /var/www/
 git clone https://github.com/anton-chernets/google-sheets-parser.git
 cd google-sheets-parser
 cp .env.example .env
+```
+### Preparing for sail virtual
+```Shell
+sudo apt update
+sudo apt-get install composer
+composer install
+./vendor/bin/sail up #Docker is not running.
+apt install wsl
+wsl --list -v
+sudo apt update
+sudo apt install curl apt-transport-https ca-certificates software-properties-common
+sudo apt install docker.io -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+sudo apt update
+sudo apt install docker-ce -y
+sudo apt install docker-compose
+```
+### Sail virtual start
+```Shell
+./vendor/bin/sail up #project started
+php artisan google-sheets-parser:command #start parsing to DB
+
+```
+### Public ip address
+```Shell
+138.201.190.167
+```
+### Additional commands
+``` Shell
+docker compose down -v
+sail build --no-cache
+sail up
+sail stop
 ```
 
 ## Project Used PHP Google Client:
