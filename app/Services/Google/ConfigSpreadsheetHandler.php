@@ -2,25 +2,21 @@
 
 namespace App\Services\Google;
 
+use App\DTO\GoogleSheetsConfigDTO;
+use App\Factories\GoogleSheetsConfigFactory;
+
 class ConfigSpreadsheetHandler implements SpreadsheetHandlerStrategy
 {
-    protected array $sheetFiles;
+    protected GoogleSheetsConfigDTO $filesConfigDTO;
 
-    public function getSpreadsheetIds(): array
+    public function __construct()
     {
-        $spreadsheetIds = [];
-        foreach ($this->sheetFiles as $file) {
-            $spreadsheetIds[] = $this->extractSpreadsheetId($file['file_url']);
-        }
-        return $spreadsheetIds;
+        $configArray = config('google-sheets');
+        $this->filesConfigDTO = GoogleSheetsConfigFactory::fromArray($configArray);
     }
 
-    private function extractSpreadsheetId(string $url): ?string
+    public function getFilesConfigDTO(): array
     {
-        $pattern = '/\/d\/([a-zA-Z0-9-_]+)/';
-        if (preg_match($pattern, $url, $matches)) {
-            return $matches[1];
-        }
-        return null;
+        return $this->filesConfigDTO->files;
     }
 }

@@ -2,7 +2,8 @@
 
 namespace App\Console\Commands;
 
-use App\Jobs\GoogleSheetsFileImportJob;
+use App\Jobs\ProcessGoogleSheetImportJob;
+use App\Services\Google\SpreadsheetHandlerFactory;
 use Illuminate\Console\Command;
 
 class GoogleSheetsFileImportCommand extends Command
@@ -25,9 +26,13 @@ class GoogleSheetsFileImportCommand extends Command
      * Execute the console command.
      *
      * @return void
+     * @throws \Exception
      */
     public function handle(): void
     {
-        GoogleSheetsFileImportJob::dispatch();
+        $handler = SpreadsheetHandlerFactory::make();
+        foreach ($handler->getFilesConfigDTO() as $file) {
+            ProcessGoogleSheetImportJob::dispatch($file);
+        }
     }
 }

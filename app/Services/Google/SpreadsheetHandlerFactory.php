@@ -9,8 +9,11 @@ class SpreadsheetHandlerFactory
     /**
      * @throws Exception
      */
-    public static function make(): SpreadsheetHandlerStrategy
+    public static function make(string $scheme = 'default'): SpreadsheetHandlerStrategy
     {
-        return new ConfigSpreadsheetHandler();
+        return match ($scheme) {
+            'default' => new ConfigSpreadsheetHandler(),
+            default => throw new Exception("Scheme '{$scheme}' have not supported yet"),
+        };
     }
 }
