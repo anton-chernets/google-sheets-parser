@@ -1,3 +1,12 @@
+## Linux Ubuntu 20.04 deploy
+### git repo
+
+```Shell
+git clone https://github.com/anton-chernets/google-sheets-parser.git
+cd google-sheets-parser
+cp .env.example .env
+```
+
 ## Project Used PHP Google Client:
 [google-api-php-client](https://github.com/googleapis/google-api-php-client/)
 
