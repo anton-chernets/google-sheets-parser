@@ -26,18 +26,18 @@ sudo apt install docker-compose
 ```Shell
 ./vendor/bin/sail up #project started
 php artisan google-sheets-parser:command #start parsing to DB
-
+php artisan horizon
 ```
 ### Public ip address
 ```Shell
 138.201.190.167
 ```
 ### Additional commands
-``` Shell
+```Shell
 docker compose down -v
-sail build --no-cache
-sail up
-sail stop
+./vendor/bin/sail build --no-cache
+./vendor/bin/sail up
+./vendor/bin/sail stop
 ```
 
 ## Project Used PHP Google Client:

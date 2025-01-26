@@ -12,7 +12,7 @@
         "php": "^8.2",
         "google/apiclient": "^2.18",
         "laravel/framework": "^11.31",
-        "laravel/horizon": "*",
+        "laravel/horizon": "^5.30",
         "laravel/tinker": "^2.9"
     },
     "require-dev": {
