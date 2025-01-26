@@ -30,7 +30,7 @@ php artisan horizon
 ```
 ### Public ip address
 ```Shell
-138.201.190.167
+138.201.190.167/horizon/jobs
 ```
 ### Additional commands
 ```Shell
@@ -38,6 +38,13 @@ docker compose down -v
 ./vendor/bin/sail build --no-cache
 ./vendor/bin/sail up
 ./vendor/bin/sail stop
+```
+### Horizon
+```Shell
+sudo apt-get install supervisor
+php artisan horizon:status
+php artisan horizon:continue-supervisor supervisor-1
+php artisan horizon:supervisor-status supervisor-1
 ```
 
 ## Project Used PHP Google Client:
