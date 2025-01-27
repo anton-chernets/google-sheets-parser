@@ -1,3 +1,8 @@
+### google sheets parse config path:
+```aiignore
+/config/google-sheets.php
+```
+
 ## Linux Ubuntu 24.04 deploy
 ### git repo
 ```Shell
