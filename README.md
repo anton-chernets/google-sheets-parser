@@ -44,6 +44,7 @@ docker compose down -v
 ./vendor/bin/sail build --no-cache
 ./vendor/bin/sail up
 ./vendor/bin/sail stop
+composer dump-autoload
 ```
 ### Horizon
 ```Shell
