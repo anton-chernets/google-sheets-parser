@@ -31,6 +31,7 @@ sudo apt install docker-compose
 ```Shell
 ./vendor/bin/sail up #project started
 php artisan google-sheets-parser:command #start parsing to DB
+php artisan horizon:install
 php artisan horizon
 ```
 ### Public ip address
